@@ -3,7 +3,9 @@ const base = require('./config/base.conf');
 const RpService = require("wdio-reportportal-service");
 
 exports.config = {
-    runner: 'local',
+    host: 'localhost',
+    port: 4444,
+    path: '/wd/hub',
 
     maxInstances: 1,
     capabilities: [
@@ -13,7 +15,7 @@ exports.config = {
         }
     ],
 
-    services: ['geckodriver', [RpService, {}]],
+    services: [[RpService, {}]],
 
     ...base,
     ...hooks

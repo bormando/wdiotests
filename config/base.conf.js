@@ -1,3 +1,6 @@
+const reportPortal = require('wdio-reportportal-reporter');
+const rpConfig = require('./reportportal.conf');
+
 module.exports = {
     specs: [
         './test/specs/**/*.js'
@@ -15,11 +18,15 @@ module.exports = {
 
     baseUrl: 'https://localcoding.us',
 
-    framework: 'mocha',
-    reporters: ['spec', ['allure', {
-        outputDir: 'allure-results',
-        disableWebdriverStepsReporting: true
+    reporters: [
+        [reportPortal, rpConfig],
+        'spec',
+        ['allure', {
+            outputDir: 'allure-results',
+            disableWebdriverStepsReporting: true
     }]],
+
+    framework: 'mocha',
     mochaOpts: {
         require: ['@babel/register'],
         ui: 'bdd',

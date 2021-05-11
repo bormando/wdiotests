@@ -7,6 +7,7 @@
     "test:chrome:headless": "npx wdio run chrome.headless.conf.js",
     "test:firefox": "npx wdio run firefox.conf.js",
     "test:firefox:headless": "npx wdio run firefox.headless.conf.js",
+    "test:standalone": "npx wdio run standalone.conf.js",
     "report:serve": "npx allure serve allure-results",
     "report:generate": "npx allure generate allure-results -o allure-report --clean",
     "report:open": "npx allure open allure-report"
@@ -30,6 +31,8 @@
     "allure-commandline": "^2.13.8",
     "dotenv": "^8.2.0",
     "geckodriver": "^1.22.2",
-    "wdio-geckodriver-service": "^1.1.2"
+    "wdio-geckodriver-service": "^1.1.2",
+    "wdio-reportportal-reporter": "^6.4.1",
+    "wdio-reportportal-service": "^6.4.1"
   }
 }

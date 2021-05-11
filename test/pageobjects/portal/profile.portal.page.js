@@ -4,8 +4,8 @@ class ProfilePage extends PortalPage {
   get iconUser () { return $('.ant-avatar-square'); }
 
   async isOpen () {
-    expect(browser).toHaveUrlContaining('/profile/');
-    expect(this.iconUser).toBeDisplayed();
+    await expect(browser).toHaveUrlContaining('/profile/');
+    await expect(this.iconUser).toBeDisplayed();
   }
 }
 
