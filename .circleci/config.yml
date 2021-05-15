@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            npm run test:chrome:headless
+            npm run test:selenoid
             ls -la
             test -d allure-previous && cp -r allure-previous/allure-report/history allure-results || echo "Previous report directory not found"
             npm run report:generate
